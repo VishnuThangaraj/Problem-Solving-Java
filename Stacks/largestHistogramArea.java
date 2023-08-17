@@ -4,13 +4,12 @@ import java.io.*;
 
 //https://course.acciojob.com/idle?question=50799402-ffd5-4907-9f91-555993ff4b62
 
-//input Example
-/*
+/* EXAMPLE INPUT
  	4
 	1 2 3 1
  */
 
-class Main {
+public class largestHistogramArea {
     
     
 	public static void main (String[] args) throws IOException {
