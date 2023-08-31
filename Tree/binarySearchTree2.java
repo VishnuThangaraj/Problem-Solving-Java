@@ -1,7 +1,7 @@
 //package Trees;
 
 // MAIN METHOD
-public class binarySearchTree2 {
+public class binarySearchTree {
     public static void main(String[] args) {
         //create the tree
         BST tree = new BST();
@@ -38,6 +38,13 @@ public class binarySearchTree2 {
 
         //display the tree
         tree3.prettyDisplay();
+
+        System.out.println();
+
+        //    TRAVERSAL
+        tree.preOrder();
+        tree.inOrder();
+        tree.postOrder();
     }
 }
 
@@ -190,5 +197,68 @@ class BST{ //binarySearchTree(BST)
 
         //recursive call for left node
         prettyDisplay(node.left, level+1);
+    }
+
+    //          TRAVERSAL 
+    //preorder traversal
+    public void preOrder(){
+        System.out.print("Pre-Order Traversal : ");
+        preOrder(root);
+        System.out.println();
+    }
+
+    //private preOrder traversal helper function
+    private void preOrder(Node node){
+        if(node == null){
+            return;
+        }
+        //print node first
+        System.out.print(node.value+" ");
+        //recursive left 
+        preOrder(node.left);
+        //recursive right
+        preOrder(node.right);
+    }
+
+    //inorder traversal
+    public void inOrder(){
+        System.out.print("In-Order Traversal : ");
+        inOrder(root);
+        System.out.println();
+    }
+
+    //private inOrder traversal helper function
+    private void inOrder(Node node){
+        if(node == null){
+            return;
+        }
+        //recursive left 
+        inOrder(node.left);
+        //print node 
+        System.out.print(node.value+" ");
+        //recursive right
+        inOrder(node.right);
+    }
+
+    //postorder traversal
+    public void postOrder(){
+        System.out.print("Post-Order Traversal : ");
+        postOrder(root);
+        System.out.println();
+    }
+
+    //private postOrder traversal helper function
+    private void postOrder(Node node){
+        if(node == null){
+            return;
+        }
+        //recursive left 
+        postOrder(node.left);
+        
+        //recursive right
+        postOrder(node.right);
+
+        //print node 
+        System.out.print(node.value+" ");
     }
 }
