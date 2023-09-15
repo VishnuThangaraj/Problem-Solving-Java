@@ -43,27 +43,27 @@ n is even
 
 class Solution {
     public boolean arrayPairs(int[] arr, int k) {
-		HashMap <Integer, Integer> storage = new HashMap<>();
+		//array to store the mod of given elements in arr
+        int[] storage = new int[k];
 
-		//store the frequencies in the hashmap
-		for(int value: arr) storage.put(value%k, storage.getOrDefault(value%k,0)+1);
+        //add elements to array
+        for(int value : arr){
+            value%=k; //get the mod 
+            if(value < 0){
+                value+=k;
+            }
+            storage[value]++;
+        }
 
-		//check for pairs in hasMap
-		for(int key : storage.keySet()){
-			if(key == 0){ //zero pair will be zero
-				if(storage.getOrDefault(0, 2) % 2 != 0){
-					//count of zero should be even
-					return false;
-				}
-				continue;
-			}
-			
-			if(storage.get(key) != storage.getOrDefault(k-key,0) % k){
-				return false; //valid pair not found
-			}
-		}
-		
-		return true;
+        if(storage[0] %2 != 0) return false; //zero should be an even frequency
+
+        //check for valid pairs
+        for(int i=1;i<=k/2; i++){
+            if(storage[i] != storage[k-i]){
+                return false; //no matching pairs found
+            }
+        }
+        return true;
     }
 }
 
