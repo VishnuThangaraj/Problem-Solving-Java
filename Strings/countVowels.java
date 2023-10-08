@@ -1,4 +1,38 @@
-// https://course.acciojob.com/idle?question=4bc01cf7-15a3-4475-981b-82694af81140
+/*
+Write a program to find out how many vowels (a, e, i, o, u) are present in a string str.
+Vowels are the letters - a, e, i, o, u
+
+Input Format:
+Input consists of one line.
+First line contains a string str
+
+Ouput Format:
+Return an integer i.e. number of vowels present in the string.
+
+Example 1
+Input
+accioschool
+
+Output
+5
+
+Explanation
+The string contains 5 vovels:
+a at position str[0]
+i at position str[3]
+o at positions str[4],str[8] and str[9]
+
+Example 2
+Input
+acciojob
+
+Output
+4
+
+Constraints
+1 <= str.length <= 3 * 10^5
+It is guaranteed that string contains only smallcase letters.
+*/
 
 import java.util.*;
 
